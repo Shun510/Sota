@@ -1,0 +1,605 @@
+VstoneMagic Build&Execute Message Log
+BuildStart time:2017/05/08 17:45:22
+ビルドを開始します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\shun\Desktop\SotaWork\Health_management\bin"  -g  -cp ".;C:\Users\shun\VstoneMagicData\jar\core-2.2.jar;C:\Users\shun\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\shun\VstoneMagicData\jar\javase-2.2.jar;C:\Users\shun\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\shun\VstoneMagicData\jar\opencv-310.jar;C:\Users\shun\VstoneMagicData\jar\sotalib.jar;C:\Users\shun\VstoneMagicData\jar\SRClientHelper.jar"  -encoding UTF-8 "C:\Users\shun\Desktop\SotaWork\Health_management\src\main\main.java" "C:\Users\shun\Desktop\SotaWork\Health_management\src\jp\co\mysota\mymain.java" 
+
+正常にコンパイルできました。
+
+jarファイルの作成
+マニフェストファイルを作成します。
+jarファイルを作成します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jar.exe cvfm Health_management.jar Manifest.mf main jp\co\mysota
+マニフェストが追加されました
+main/を追加中です(入=0)(出=0)(0%格納されました)
+main/main$GlobalVariable.classを追加中です(入=1536)(出=753)(50%収縮されました)
+main/main.classを追加中です(入=2189)(出=1189)(45%収縮されました)
+jp/co/mysota/を追加中です(入=0)(出=0)(0%格納されました)
+jp/co/mysota/mymain.classを追加中です(入=8565)(出=3434)(59%収縮されました)
+
+jarファイルを作成しました。
+
+送信ファイルの上書き確認
+
+スタートアップアプリケーションの停止
+echo "STOP_STARTUP" > /home/vstone/vstonemagic/menu.fifoロボットのSFTPへ接続します。
+192.168.1.20@root
+.
+
+
+ファイルの転送
+ロボットにファイルを転送します。
+Connect to 192.168.1.20@root...接続しました。
+ファイルの転送を開始します。
+Send':'Health_management.jar' completed
+
+
+アプリケーション登録用のアーカイブファイルを作成
+.
+ビルドが完了しました。
+
+
+jarファイルの実行
+ロボットのSSHへ接続します。
+192.168.1.20@root
+java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &ファイルの転送が完了しました。java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &
+[1;32mroot@edison:~$[m java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &
+[1] 20333
+[1;32mroot@edison:~$[m Listening for transport dt_socket at address: 8765
+デバッグの準備ができました。
+
+jdbの実行
+デバッガを起動します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.20,port=8765
+捕捉されないjava.lang.Throwableの設定遅延した捕捉されないjava.lang.Throwableの設定jdbの初期化中...デバッグ実行のスタンバイができました。
+> VMが開始されました: 現在のコール・スタックにフレームがありません[Info][CRoboCamera]class jp.vstone.RobotLib.CSotaMotion
+[Info][SpeechRecog]SpeechRecog
+[Info][CRobotSock]Connected server
+[Info][CRobotMotion]MasterCtrlPeriod 16666
+[Info][CRoboCamera]StartTask MODE_FACE_TRACK
+[Info][CRoboCamera]openCapture
+/home/vstone/pux_faceu/bin/ROMfiles/PFID_dict_feature_ha2.bin
+[Info][CRoboCamera]Strat FaceDetectTask 14
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]Play /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 20411
+[Info][MotionAsSotaWish]play 2182
+[Info][MotionAsSotaWish][play][talk] [1782sec]
+[Info][SpeechRecog][getRecognition][Score:0.6890292763710022]タマリ
+[Info][SpeechRecog][getRecognition][Score:0.6886098384857178]タマネギ
+[Info][SpeechRecog][getRecognition][Score:0.6997209787368774]たまに
+[Info][SpeechRecog][getRecognition][Score:0.7218195796012878]たまねぎ
+[Info][SpeechRecog][getRecognition][Score:0.722998857498169]玉ねぎ
+[Info][SpeechRecog][getRecognition][Score:0.689690351486206]玉里
+[Info][SpeechRecog][getRecognition][Score:0.7083861827850342]玉利
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]タマリ君だね
+[Info][TextToSpeechSota][get:タマリ君だね][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts0.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 22512
+[Info][MotionAsSotaWish]play 1322
+[Info][MotionAsSotaWish][play][talk] [922sec]
+[Info][MotionAsSotaWish][Say][scene:talk]タマリ君の体温は？
+[Info][TextToSpeechSota][get:タマリ君の体温は？][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts1.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 22532
+[Info][MotionAsSotaWish]play 1753
+[Info][MotionAsSotaWish][play][talk] [1353sec]
+[Info][SpeechRecog][getRecognition][Score:0.7603029771284624]三十六一部
+[Info][SpeechRecog][getRecognition][Score:0.753843827681108]三十六度一
+[Info][SpeechRecog][getRecognition][Score:0.7578449249267578]三十六℃一
+[Info][SpeechRecog][getRecognition][Score:0.7647542086514559]三十六度一部
+[Info][SpeechRecog][getRecognition][Score:0.7574724717573686]三十六°一
+[Info][SpeechRecog][getRecognition][Score:0.7683828527277167]三十六°一部
+[Info][SpeechRecog][getRecognition][Score:0.7687553058971058]三十六℃一部
+[Info][MotionAsSotaWish][Say][scene:talk]３６度ナンブ？
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492074398961.wav
+[Info][CPlayWave]Play /var/sota/tts//1492074398961.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 24645
+[Info][MotionAsSotaWish]play 1775
+[Info][MotionAsSotaWish][play][talk] [1375sec]
+[Info][SpeechRecog][getRecognition][Score:0.7160464695521763]①一
+[Info][SpeechRecog][getRecognition][Score:0.7407434327261788]一一部分
+[Info][SpeechRecog][getRecognition][Score:0.787989752633231]一一部
+[Info][SpeechRecog][getRecognition][Score:0.751068115234375]一一分
+[Info][SpeechRecog][getRecognition][Score:0.7983144351414271]一一
+[Info][SpeechRecog][getRecognition][Score:0.7057217870439801]①一部
+[Info][SpeechRecog][getRecognition][Score:0.7445107187543596]一一部部
+[Info][MotionAsSotaWish][Say][scene:talk]３６度１ブだね
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492074605645.wav
+[Info][CPlayWave]Play /var/sota/tts//1492074605645.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 26772
+[Info][MotionAsSotaWish]play 2316
+[Info][MotionAsSotaWish][play][talk] [1916sec]
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]Play /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 26820
+[Info][MotionAsSotaWish]play 2182
+[Info][MotionAsSotaWish][play][talk] [1782sec]
+[Info][SpeechRecog][getRecognition][Score:0.7083384195963541]今度そうでしたとメール
+[Info][SpeechRecog][getRecognition][Score:0.703779935836792]今度そうでしたとメールしらす
+[Info][SpeechRecog][getRecognition][Score:0.706515868504842]今度そうしたとメールしらす
+[Info][SpeechRecog][getRecognition][Score:0.706664244333903]温度そうしたとメール
+[Info][SpeechRecog][getRecognition][Score:0.7110743522644043]今度そうしたとメール
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7997276782989502]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8096139272054036]六
+[Info][SpeechRecog][getRecognition][Score:0.8472222646077474]六時
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 688
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.8520660400390625]屋内
+[Info][SpeechRecog][getRecognition][Score:0.8327901237889339]区内
+[Info][SpeechRecog][getRecognition][Score:0.8359580290944952]屋内屋外
+[Info][SpeechRecog][getRecognition][Score:0.8329514453285618]宮内
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8193079403468541]石
+[Info][SpeechRecog][getRecognition][Score:0.8115662847246442]詩
+[Info][SpeechRecog][getRecognition][Score:0.8138772419520787]医師
+[Info][SpeechRecog][getRecognition][Score:0.8231881005423409]西
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]イシ君だね
+[Info][TextToSpeechSota][get:イシ君だね][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts2.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 4903
+[Info][MotionAsSotaWish]play 1165
+[Info][MotionAsSotaWish][play][talk] [765sec]
+[Info][MotionAsSotaWish][Say][scene:talk]イシ君の体温は？
+[Info][TextToSpeechSota][get:イシ君の体温は？][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts3.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 4925
+[Info][MotionAsSotaWish]play 1595
+[Info][MotionAsSotaWish][play][talk] [1195sec]
+[Info][SpeechRecog][getRecognition][Score:0.7194509506225586]金
+[Info][SpeechRecog][getRecognition][Score:0.7188093662261963]畳
+[Info][SpeechRecog][getRecognition][Score:0.7370849251747131]熱海
+[Info][SpeechRecog][getRecognition][Score:0.7038883566856384]二
+[Info][MotionAsSotaWish][Say][scene:talk]聞こえなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232764789.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232764789.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 7049
+[Info][MotionAsSotaWish]play 1344
+[Info][MotionAsSotaWish][play][talk] [944sec]
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]Play /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 7087
+[Info][MotionAsSotaWish]play 2182
+[Info][MotionAsSotaWish][play][talk] [1782sec]
+[Info][SpeechRecog][getRecognition][Score:0.8084672292073567]竹澤くん
+[Info][SpeechRecog][getRecognition][Score:0.7946566475762261]滝沢くん
+[Info][SpeechRecog][getRecognition][Score:0.8114266925387912]竹澤君
+[Info][SpeechRecog][getRecognition][Score:0.7976161109076605]滝沢君
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]タケザワ君だね
+[Info][TextToSpeechSota][get:タケザワ君だね][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts4.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 9204
+[Info][MotionAsSotaWish]play 1492
+[Info][MotionAsSotaWish][play][talk] [1092sec]
+[Info][MotionAsSotaWish][Say][scene:talk]タケザワ君の体温は？
+[Info][TextToSpeechSota][get:タケザワ君の体温は？][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts5.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 9222
+[Info][MotionAsSotaWish]play 1925
+[Info][MotionAsSotaWish][play][talk] [1525sec]
+[Info][SpeechRecog][getRecognition][Score:0.8372083391462053]三十八第一見たい
+[Info][SpeechRecog][getRecognition][Score:0.849412373134068]三十八第一
+[Info][SpeechRecog][getRecognition][Score:0.8297937256949288]三十八第一みたい
+[Info][MotionAsSotaWish][Say][scene:talk]３８度ナンブ？
+[Info][TextToSpeechSota][get:３８度ナンブ？][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts6.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 11317
+[Info][MotionAsSotaWish]play 1804
+[Info][MotionAsSotaWish][play][talk] [1404sec]
+[Info][SpeechRecog][getRecognition][Score:0.8111749649047851]ビュー移住者
+[Info][SpeechRecog][getRecognition][Score:0.82449951171875]理由移住者
+[Info][SpeechRecog][getRecognition][Score:0.8107276280721029]移住者
+[Info][SpeechRecog][getRecognition][Score:0.8080361684163412]牛移住者
+[Info][SpeechRecog][getRecognition][Score:0.8062849680582682]ｅｕ移住者
+[Info][MotionAsSotaWish][Say][scene:talk]ナンブ？
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492074428585.wav
+[Info][CPlayWave]Play /var/sota/tts//1492074428585.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 13427
+[Info][MotionAsSotaWish]play 961
+[Info][MotionAsSotaWish][play][talk] [561sec]
+[Info][SpeechRecog][getRecognition][Score:0.78117882121693]三部
+[Info][SpeechRecog][getRecognition][Score:0.7869377136230469]三
+[Info][SpeechRecog][getRecognition][Score:0.7549337907270952]山武分
+[Info][SpeechRecog][getRecognition][Score:0.7829659201882102]山部
+[Info][SpeechRecog][getRecognition][Score:0.8179664611816406]山武
+[Info][MotionAsSotaWish][Say][scene:talk]３８度３ブだね
+[Info][TextToSpeechSota][get:３８度３ブだね][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts7.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 15524
+[Info][MotionAsSotaWish]play 2357
+[Info][MotionAsSotaWish][play][talk] [1957sec]
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]Play /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 15590
+[Info][MotionAsSotaWish]play 2182
+[Info][MotionAsSotaWish][play][talk] [1782sec]
+[Info][SpeechRecog][getRecognition][Score:0.7951859746660505]電話
+[Info][SpeechRecog][getRecognition][Score:0.812854630606515]九
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7548112273216248]
+[Info][SpeechRecog][getRecognition][Score:0.7483023405075073]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7783908049265543]
+[Info][SpeechRecog][getRecognition][Score:0.7752455870310465]家
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 21958
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.6879281997680664]
+[Info][SpeechRecog][getRecognition][Score:0.6735725402832031]い
+[Info][SpeechRecog][getRecognition][Score:0.6713878313700358]二
+[Info][SpeechRecog][getRecognition][Score:0.6714857419331868]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7369740804036458]名鉄
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.6617099642753601]
+[Info][SpeechRecog][getRecognition][Score:0.6464099884033203]テイルズ
+[Info][SpeechRecog][getRecognition][Score:0.6533442139625549]二
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 28262
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.7974472045898438]子
+[Info][SpeechRecog][getRecognition][Score:0.7976081967353821]〇
+[Info][SpeechRecog][getRecognition][Score:0.8004276752471924]あれ
+[Info][SpeechRecog][getRecognition][Score:0.8044154644012451]ね
+[Info][SpeechRecog][getRecognition][Score:0.7979834079742432]ねえ
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7630434566073947]女
+[Info][SpeechRecog][getRecognition][Score:0.8115392261081271]カード
+[Info][SpeechRecog][getRecognition][Score:0.7631016307406955]って
+[Info][SpeechRecog][getRecognition][Score:0.8117624918619791]画
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.820798397064209]
+[Info][SpeechRecog][getRecognition][Score:0.8206911087036133]を
+[Info][SpeechRecog][getRecognition][Score:0.8210798263549806]女
+[Info][SpeechRecog][getRecognition][Score:0.8207927703857423]は
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 2143
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.8035838263375418]タイ
+[Info][SpeechRecog][getRecognition][Score:0.8088758332388741]親
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7896532416343689]
+[Info][SpeechRecog][getRecognition][Score:0.7876295447349548]カード
+[Info][SpeechRecog][getRecognition][Score:0.8322428464889526]画
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7536771480853741]そうだそういう安室奈美恵
+[Info][SpeechRecog][getRecognition][Score:0.7436579190767729]そうだそう
+[Info][SpeechRecog][getRecognition][Score:0.7747312692495493]そうだそう安室奈美恵
+[Info][SpeechRecog][getRecognition][Score:0.7540930968064529]そうだそうえん安室奈美恵
+[Info][SpeechRecog][getRecognition][Score:0.7562839067899264]そうだそうよ安室奈美恵
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 7170
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.769260311126709]
+[Info][SpeechRecog][getRecognition][Score:0.7661905765533448]を
+[Info][SpeechRecog][getRecognition][Score:0.766667366027832]お
+[Info][SpeechRecog][getRecognition][Score:0.7065217018127442]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.5951326489448547]
+[Info][SpeechRecog][getRecognition][Score:0.5790802836418152]い
+[Info][SpeechRecog][getRecognition][Score:0.5789852738380432]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7431683540344238]
+[Info][SpeechRecog][getRecognition][Score:0.7462046941121419]か
+[Info][SpeechRecog][getRecognition][Score:0.7640523910522461]課題
+[Info][SpeechRecog][getRecognition][Score:0.7951879501342773]画
+[Info][SpeechRecog][getRecognition][Score:0.7658980687459309]家電
+[Info][SpeechRecog][getRecognition][Score:0.7652888298034668]まで
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 12070
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.8032200963873611]エルク
+[Info][SpeechRecog][getRecognition][Score:0.8067056254336707]七
+[Info][SpeechRecog][getRecognition][Score:0.820218939530222]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8267818556891546]
+[Info][SpeechRecog][getRecognition][Score:0.826605478922526]と
+[Info][SpeechRecog][getRecognition][Score:0.8262648052639431]か
+[Info][SpeechRecog][getRecognition][Score:0.827059851752387]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7968831062316895]携帯電話
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 18389
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.8221038818359375]
+[Info][SpeechRecog][getRecognition][Score:0.8105772654215495]五
+[Info][SpeechRecog][getRecognition][Score:0.8146095275878906]〇
+[Info][SpeechRecog][getRecognition][Score:0.8030827840169271]〇五
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7816955248514811]
+[Info][SpeechRecog][getRecognition][Score:0.781589110692342]タイマー
+[Info][SpeechRecog][getRecognition][Score:0.78266708056132]会話
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8359920713636609]
+[Info][SpeechRecog][getRecognition][Score:0.8333894941541883]もう
+[Info][SpeechRecog][getRecognition][Score:0.8117589950561523]木
+[Info][SpeechRecog][getRecognition][Score:0.8131912019517686]イン
+[Info][SpeechRecog][getRecognition][Score:0.8032310273912218]の
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 24736
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.7483336925506592]師士詩
+[Info][SpeechRecog][getRecognition][Score:0.7481366157531739]し士詩
+[Info][SpeechRecog][getRecognition][Score:0.7510808944702149]師師師
+[Info][SpeechRecog][getRecognition][Score:0.7508838176727295]し師師
+[Info][SpeechRecog][getRecognition][Score:0.7551860809326172]師士師
+[Info][SpeechRecog][getRecognition][Score:0.7549890041351319]し士師
+[Info][SpeechRecog][getRecognition][Score:0.7504112720489502]師士死
+[Info][SpeechRecog][getRecognition][Score:0.7502141952514649]し士死
+[Info][SpeechRecog][getRecognition][Score:0.7490467071533203]師士士
+[Info][SpeechRecog][getRecognition][Score:0.748849630355835]し士士
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7785256249564034]
+[Info][SpeechRecog][getRecognition][Score:0.7948472159249441]はぁ
+[Info][SpeechRecog][getRecognition][Score:0.7136601039341518]い
+[Info][SpeechRecog][getRecognition][Score:0.7583372933523995]はあ
+[Info][SpeechRecog][getRecognition][Score:0.7492580413818359]ああ
+[Info][SpeechRecog][getRecognition][Score:0.7299816949026925]はぁい
+[Info][SpeechRecog][getRecognition][Score:0.7489207131522042]ハー
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7139895302908761]
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 30503
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.7989953545963063]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8395177721977234]ｗｉｋｉ
+[Info][SpeechRecog][getRecognition][Score:0.7627490162849426]うぃき
+[Info][SpeechRecog][getRecognition][Score:0.7744137048721313]ウィキ
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7956053188868931]する
+[Info][SpeechRecog][getRecognition][Score:0.7723192487444196]スレ
+[Info][SpeechRecog][getRecognition][Score:0.7996885435921804]ハッスル
+[Info][SpeechRecog][getRecognition][Score:0.7726463590349469]発生
+[Info][SpeechRecog][getRecognition][Score:0.767188617161342]アップル
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 3817
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.7418579621748491]年
+[Info][SpeechRecog][getRecognition][Score:0.7412900057705966]詩
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]トシ君だね
+[Info][TextToSpeechSota][get:トシ君だね][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts8.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 5940
+[Info][MotionAsSotaWish]play 1188
+[Info][MotionAsSotaWish][play][talk] [788sec]
+[Info][MotionAsSotaWish][Say][scene:talk]トシ君の体温は？
+[Info][TextToSpeechSota][get:トシ君の体温は？][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts9.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 5959
+[Info][MotionAsSotaWish]play 1623
+[Info][MotionAsSotaWish][play][talk] [1223sec]
+[Info][SpeechRecog][getRecognition][Score:0.7695302963256836]カード
+[Info][SpeechRecog][getRecognition][Score:0.7553315758705139]と
+[Info][SpeechRecog][getRecognition][Score:0.7559362053871155]た
+[Info][MotionAsSotaWish][Say][scene:talk]聞こえなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232764789.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232764789.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 8075
+[Info][MotionAsSotaWish]play 1344
+[Info][MotionAsSotaWish][play][talk] [944sec]
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]Play /var/sota/tts//1492071977576.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 8841
+[Info][MotionAsSotaWish]play 2182
+[Info][MotionAsSotaWish][play][talk] [1782sec]
+[Info][SpeechRecog][getRecognition][Score:0.6236154437065125]
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8129703733656141]
+[Info][SpeechRecog][getRecognition][Score:0.790034188164605]ｗｉｉ
+[Info][SpeechRecog][getRecognition][Score:0.7851282755533854]の
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8096901286732067]
+[Info][SpeechRecog][getRecognition][Score:0.8034551793878729]カード
+[Info][SpeechRecog][getRecognition][Score:0.8037903525612571]二
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 15160
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.6643350521723429]
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.566481868426005]
+[Info][SpeechRecog][getRecognition][Score:0.5506336291631062]い
+[Info][SpeechRecog][getRecognition][Score:0.5464853843053181]二
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7992226123809815]あした
+[Info][SpeechRecog][getRecognition][Score:0.8084936141967773]明日
+[Info][SpeechRecog][getRecognition][Score:0.8309527397155763]画
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 21502
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7802921295166017]
+[Info][SpeechRecog][getRecognition][Score:0.779521369934082]カード
+[Info][SpeechRecog][getRecognition][Score:0.7802466869354249]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8001968383789062]病院
+[Info][SpeechRecog][getRecognition][Score:0.7824527104695638]二
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 27800
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.8198840883043077]
+[Info][SpeechRecog][getRecognition][Score:0.7740472157796223]あした
+[Info][SpeechRecog][getRecognition][Score:0.8212787840101453]な
+[Info][SpeechRecog][getRecognition][Score:0.7759139802720811]は
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7698235511779785]
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7484356164932251]
+[Info][SpeechRecog][getRecognition][Score:0.7483264207839966]今
+[Info][SpeechRecog][getRecognition][Score:0.7523531913757324]本
+[Info][SpeechRecog][getRecognition][Score:0.7804520130157471]二
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 1703
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.7968594868977864]
+[Info][SpeechRecog][getRecognition][Score:0.8084612528483073]歯
+[Info][SpeechRecog]getName
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7560786671108669]
+[Info][SpeechRecog][getRecognition][Score:0.7646819220648872]カード
+[Info][SpeechRecog][getRecognition][Score:0.7565015157063801]い
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 8002
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.681092898050944]
+[Info][SpeechRecog][getRecognition][Score:0.6712071100870768]い
+[Info][SpeechRecog][getRecognition][Score:0.6695377031962076]お
+[Info][SpeechRecog][getRecognition][Score:0.6715601285298665]二
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.5511812567710876]
+[Info][SpeechRecog][getRecognition][Score:0.5373079180717468]ａ
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.6404164632161458]
+[Info][SpeechRecog][getRecognition][Score:0.6306756337483723]ａ
+[Info][SpeechRecog][getRecognition][Score:0.6309696833292643]い
+[Info][SpeechRecog][getRecognition][Score:0.6298483610153198]お
+[Info][SpeechRecog][getRecognition][Score:0.6302627722422282]二
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 13013
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+[Info][SpeechRecog][getRecognition][Score:0.6004176934560139]
+[Info][SpeechRecog][getRecognition][Score:0.5907382567723591]家
+[Info][SpeechRecog][getRecognition][Score:0.6016928354899088]か
+[Info][SpeechRecog][getRecognition][Score:0.5931419134140015]二
+[Info][SpeechRecog][getRecognition][Score:0.5947368542353312]た
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.8304271697998047]カード
+[Info][SpeechRecog][getRecognition][Score:0.8317174911499023]何時
+[Info][SpeechRecog][getRecognition][Score:0.7902079105377198]二
+[Info][SpeechRecog][getRecognition][Score:0.8302953720092774]本
+[Info][SpeechRecog][getRecognition][Score:0.8307590484619141]ｃｏｍ
+[Info][SpeechRecog]getName
+[Info][SpeechRecog][getRecognition][Score:0.7467316150665284]一
+[Info][SpeechRecog][getRecognition][Score:0.7473585605621338]市
+[Info][SpeechRecog][getRecognition][Score:0.7776480674743653]カード
+[Info][SpeechRecog][getRecognition][Score:0.7473901271820069]詩
+[Info][SpeechRecog][getRecognition][Score:0.7482263088226319]画
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]よく聞き取れなかった
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]Play /var/sota/tts//1494232730464.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 19489
+[Info][MotionAsSotaWish]play 1721
+[Info][MotionAsSotaWish][play][talk] [1321sec]
+
+kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`中断します。
+exit
+[1;32mroot@edison:~$[m 
+[1;32mroot@edison:~$[m kill ` jps|greListening for transport dt_socket at address: 8765
+p "^[0-main[1] > 9]\+ jar" |awk '{print $1}'`
+
+ロボットとの通信を切断しました。
+failed in sendDebugCommand:quit
+StandardIn がリダイレクトされていません。
