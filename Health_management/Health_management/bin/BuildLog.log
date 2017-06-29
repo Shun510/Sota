@@ -1,0 +1,99 @@
+VstoneMagic Build&Execute Message Log
+BuildStart time:2017/06/29 15:35:18
+ビルドを開始します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\shun\Desktop\SotaWork\Health_management (2)\Health_management\bin"  -g  -cp ".;C:\Users\shun\VstoneMagicData\jar\core-2.2.jar;C:\Users\shun\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\shun\VstoneMagicData\jar\javase-2.2.jar;C:\Users\shun\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\shun\VstoneMagicData\jar\opencv-310.jar;C:\Users\shun\VstoneMagicData\jar\sotalib.jar;C:\Users\shun\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\shun\VstoneMagicData\jar\twitter4j-async-4.0.4.jar;C:\Users\shun\VstoneMagicData\jar\twitter4j-core-4.0.4.jar;C:\Users\shun\VstoneMagicData\jar\twitter4j-examples-4.0.4.jar;C:\Users\shun\VstoneMagicData\jar\twitter4j-media-support-4.0.4.jar;C:\Users\shun\VstoneMagicData\jar\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 "C:\Users\shun\Desktop\SotaWork\Health_management (2)\Health_management\src\main\main.java" "C:\Users\shun\Desktop\SotaWork\Health_management (2)\Health_management\src\jp\co\mysota\mymain.java" 
+
+正常にコンパイルできました。
+
+jarファイルの作成
+マニフェストファイルを作成します。
+jarファイルを作成します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jar.exe cvfm Health_management.jar Manifest.mf main jp\co\mysota
+マニフェストが追加されました
+main/を追加中です(入=0)(出=0)(0%格納されました)
+main/main$GlobalVariable.classを追加中です(入=1536)(出=753)(50%収縮されました)
+main/main.classを追加中です(入=2189)(出=1189)(45%収縮されました)
+jp/co/mysota/を追加中です(入=0)(出=0)(0%格納されました)
+jp/co/mysota/mymain.classを追加中です(入=10015)(出=3916)(60%収縮されました)
+
+jarファイルを作成しました。
+
+送信ファイルの上書き確認
+
+スタートアップアプリケーションの停止
+echo "STOP_STARTUP" > /home/vstone/vstonemagic/menu.fifoロボットのSFTPへ接続します。
+192.168.1.17@root
+.
+
+
+ファイルの転送
+ロボットにファイルを転送します。
+Connect to 192.168.1.17@root...接続しました。
+ファイルの転送を開始します。
+Send':'Health_management.jar' completed
+
+
+アプリケーション登録用のアーカイブファイルを作成
+.
+ビルドが完了しました。
+
+
+jarファイルの実行
+ロボットのSSHへ接続します。
+192.168.1.17@root
+java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &ファイルの転送が完了しました。java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &
+[1;32mroot@edison:~$[m java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &
+[1] 7569
+[1;32mroot@edison:~$[m デバッグの準備ができました。
+
+jdbの実行
+デバッガを起動します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.17,port=8765
+Listening for transport dt_socket at address: 8765
+捕捉されないjava.lang.Throwableの設定遅延した捕捉されないjava.lang.Throwableの設定jdbの初期化中...デバッグ実行のスタンバイができました。
+> VMが開始されました: 現在のコール・スタックにフレームがありません[Info][CRoboCamera]class jp.vstone.RobotLib.CSotaMotion
+[Info][SpeechRecog]SpeechRecog
+[Info][CRobotSock]Connected server
+[Info][CRobotMotion]MasterCtrlPeriod 16666
+[Info][CRoboCamera]StartTask MODE_FACE_TRACK
+[Info][CRoboCamera]openCapture
+/home/vstone/pux_faceu/bin/ROMfiles/PFID_dict_feature_ha2.bin
+[Info][CRoboCamera]Strat FaceDetectTask 14
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1498716743174.wav
+[Info][CPlayWave]Play /var/sota/tts//1498716743174.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 7605
+[Info][MotionAsSotaWish]play 2192
+[Info][MotionAsSotaWish][play][talk] [1792sec]
+[Info][SpeechRecog][getRecognition][Score:0.5985745191574097]ノートう
+[Info][SpeechRecog][getRecognition][Score:0.6485998630523682]後藤
+[Info][SpeechRecog][getRecognition][Score:0.6354217529296875]ノート
+[Info][SpeechRecog][getRecognition][Score:0.6117526292800903]後藤う
+[Info][SpeechRecog][getRecognition][Score:0.6125639081001282]能登う
+[Info][SpeechRecog][getRecognition][Score:0.649411141872406]能登
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]ゴトウさんだね！
+[Info][TextToSpeechSota][get:ゴトウさんだね！][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts0.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 9736
+[Info][MotionAsSotaWish]play 1341
+[Info][MotionAsSotaWish][play][talk] [941sec]
+[Info][MotionAsSotaWish][Say][scene:talk]ゴトウさんの体温は何度？
+[Info][TextToSpeechSota][get:ゴトウさんの体温は何度？][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts1.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 9755
+[Info][MotionAsSotaWish]play 2542
+[Info][MotionAsSotaWish][play][talk] [2142sec]
+
+kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`Listening for transport dt_socket at address: 8765中断します。
+exit
+
+[1;32mroot@edison:~$[m main[1] > 
+[1;32mroot@edison:~$[m kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`
+
+ロボットとの通信を切断しました。
+failed in sendDebugCommand:quit
+StandardIn がリダイレクトされていません。
