@@ -1,23 +1,27 @@
-import twitter4j.Status;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import twitter4j.StatusUpdate;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.User;
-import twitter4j.auth.AccessToken;
 
 public class TweetTest {
- public static void main(String[] args) throws TwitterException{
+ public static void main(String[] args) throws TwitterException, MalformedURLException, IOException{
 
   Twitter twitter = new TwitterFactory().getInstance();//Twitterオブジェクト作成
 
-  twitter.setOAuthConsumer("EarqNFePu9e48G5I1lJnjOU57", //アプリケーションのconsumer key
-    "jsRoH1JNebqJHA8eMPqwwQzd6MXdqQh8Y58hh31Y4M7IVPmpgZ"); //アプリケーションのconsumer secret
+  //twitter.setOAuthConsumer("EarqNFePu9e48G5I1lJnjOU57", //アプリケーションのconsumer key
+  //  "jsRoH1JNebqJHA8eMPqwwQzd6MXdqQh8Y58hh31Y4M7IVPmpgZ"); //アプリケーションのconsumer secret
 
-  AccessToken accessToken = new AccessToken(
-    "862166599851098112-pQJ3NRL6AUZVQU9Miumruef9yHfsKPW", //自分のAccess token
-    "ZXTas1jnavSFOZv2EHqNTMN0cepVC0YHtxLMU7DlKRNTs"); //自分のAccess token secret
+  //AccessToken accessToken = new AccessToken(
+  //  "862166599851098112-pQJ3NRL6AUZVQU9Miumruef9yHfsKPW", //自分のAccess token
+  //  "ZXTas1jnavSFOZv2EHqNTMN0cepVC0YHtxLMU7DlKRNTs"); //自分のAccess token secret
 
-  twitter.setOAuthAccessToken(accessToken);//自分のアクセストークンをTwitterオブジェクトに格納
+  //twitter.setOAuthAccessToken(accessToken);//自分のアクセストークンをTwitterオブジェクトに格納
 
   User user = twitter.verifyCredentials();//Userオブジェクトを作成
 
@@ -52,9 +56,16 @@ public class TweetTest {
 
   System.out.println(user.getListedCount());//追加されているリストの数を取得する
 
-  Status status = twitter.updateStatus("test tweet");
 
-  System.exit(0);
+  StatusUpdate status = new StatusUpdate("画像付きツイート");
+  status.media("310.jpg",new URL("https://nekogazou.com/wp-content/uploads/2013/07/310.jpg").openStream());
+
+  InetAddress addr = InetAddress.getLocalHost();
+  InetAddress addr2 = InetAddress.getLocalHost();
+  	if (addr.equals(addr2)) System.out.println("addrとaddr2は同じインスタンス");
+      System.out.println("Local Host Name: " + addr.getHostName());
+      System.out.println("IP Address     : " + addr.getHostAddress());
+      twitter.updateStatus(addr.getHostAddress());
  }
 }
 
