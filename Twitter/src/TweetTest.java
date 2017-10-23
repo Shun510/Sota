@@ -56,16 +56,14 @@ public class TweetTest {
 
   System.out.println(user.getListedCount());//追加されているリストの数を取得する
 
-
-  StatusUpdate status = new StatusUpdate("画像付きツイート");
-  status.media("310.jpg",new URL("https://nekogazou.com/wp-content/uploads/2013/07/310.jpg").openStream());
-
   InetAddress addr = InetAddress.getLocalHost();
   InetAddress addr2 = InetAddress.getLocalHost();
+  StatusUpdate status = new StatusUpdate("こんにちは"+addr.getHostAddress()+"こんばんは");
+  status.media("310.jpg",new URL("https://nekogazou.com/wp-content/uploads/2013/07/310.jpg").openStream());
   	if (addr.equals(addr2)) System.out.println("addrとaddr2は同じインスタンス");
       System.out.println("Local Host Name: " + addr.getHostName());
       System.out.println("IP Address     : " + addr.getHostAddress());
-      twitter.updateStatus(addr.getHostAddress());
+      twitter.updateStatus(status);
  }
 }
 
