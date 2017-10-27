@@ -1,25 +1,137 @@
 VstoneMagic Build&Execute Message Log
-BuildStart time:2017/10/27 2:28:57
-ビルドを開始します。
-C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\mth_h\OneDrive\ドキュメント\Health_management\bin"  -g -Xlint:deprecation   -cp ".;C:\Users\mth_h\VstoneMagicData\jar\core-2.2.jar;C:\Users\mth_h\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\mth_h\VstoneMagicData\jar\javase-2.2.jar;C:\Users\mth_h\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\mth_h\VstoneMagicData\jar\opencv-310.jar;C:\Users\mth_h\VstoneMagicData\jar\SotaAppManager.jar;C:\Users\mth_h\VstoneMagicData\jar\sotalib.jar;C:\Users\mth_h\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\mth_h\OneDrive\ドキュメント\Health_management\jar\twitter4j-async-4.0.4.jar;C:\Users\mth_h\OneDrive\ドキュメント\Health_management\jar\twitter4j-core-4.0.4.jar;C:\Users\mth_h\OneDrive\ドキュメント\Health_management\jar\twitter4j-media-support-4.0.4.jar;C:\Users\mth_h\OneDrive\ドキュメント\Health_management\jar\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 "C:\Users\mth_h\OneDrive\ドキュメント\Health_management\src\main\main.java" "C:\Users\mth_h\OneDrive\ドキュメント\Health_management\src\jp\co\mysota\mymain.java" 
+BuildStart time:2017/10/27 17:02:41
+ビルドの更新がありません。
 
-正常にコンパイルできました。
 
 jarファイルの作成
-マニフェストファイルを作成します。
-jarファイルを作成します。
-C:\Program Files (x86)\VstoneMagic\jdk\bin\jar.exe cvfm Health_management.jar Manifest.mf main jp\co\mysota
-マニフェストが追加されました
-main/を追加中です(入=0)(出=0)(0%格納されました)
-main/main$GlobalVariable.classを追加中です(入=1536)(出=753)(50%収縮されました)
-main/main.classを追加中です(入=2189)(出=1189)(45%収縮されました)
-jp/co/mysota/を追加中です(入=0)(出=0)(0%格納されました)
-jp/co/mysota/mymain.classを追加中です(入=15619)(出=6129)(60%収縮されました)
 
-jarファイルを作成しました。
+
+jarファイルの更新はありません
+
 
 送信ファイルの上書き確認
+
+スタートアップアプリケーションの停止
+echo "STOP_STARTUP" > /home/vstone/vstonemagic/menu.fifoロボットのSFTPへ接続します。
+192.168.1.37@root
+.....
+
+
+ファイルの転送
+ロボットにファイルを転送します。
+Connect to 192.168.1.37@root...接続しました。
+ファイルの転送を開始します。
+No send:'C:\Users\shun\Documents\Health_management\jar\twitter4j-async-4.0.4.jar'
+No send:'C:\Users\shun\Documents\Health_management\jar\twitter4j-core-4.0.4.jar'
+No send:'C:\Users\shun\Documents\Health_management\jar\twitter4j-media-support-4.0.4.jar'
+No send:'C:\Users\shun\Documents\Health_management\jar\twitter4j-stream-4.0.4.jar'
+Send':'Health_management.jar' completed
+
 
 アプリケーション登録用のアーカイブファイルを作成
 .....
 ビルドが完了しました。
+
+
+jarファイルの実行
+ロボットのSSHへ接続します。
+192.168.1.37@root
+java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &ファイルの転送が完了しました。java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &
+[1;32mroot@edison:~$[m java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar Health_management.jar 2>&1 &
+[1] 757
+[1;32mroot@edison:~$[m Listening for transport dt_socket at address: 8765
+デバッグの準備ができました。
+
+jdbの実行
+デバッガを起動します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.37,port=8765
+捕捉されないjava.lang.Throwableの設定遅延した捕捉されないjava.lang.Throwableの設定jdbの初期化中...デバッグ実行のスタンバイができました。
+> VMが開始されました: 現在のコール・スタックにフレームがありません[Info][CRoboCamera]class jp.vstone.RobotLib.CSotaMotion
+[Info][SpeechRecog]SpeechRecog
+[Info][CRobotSock]Connected server
+[Info][CRobotMotion]MasterCtrlPeriod 16666
+[Info][CRoboCamera]StartTask MODE_FACE_TRACK
+[Info][CRoboCamera]openCapture
+/home/vstone/pux_faceu/bin/ROMfiles/PFID_dict_feature_ha2.bin
+[Info][CRoboCamera]Strat FaceDetectTask 13
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1507021602943.wav
+[Info][CPlayWave]Play /var/sota/tts//1507021602943.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 794
+[Info][MotionAsSotaWish]play 2192
+[Info][MotionAsSotaWish][play][talk] [1792sec]
+[Info][CPlayWave]removeShutdownHook
+[Info][SpeechRecog][getRecognition][Score:0.6709448099136353]言
+[Info][SpeechRecog][getRecognition][Score:0.7976875901222229]ゴト
+[Info][SpeechRecog][getRecognition][Score:0.6810858845710754]ごと
+[Info][SpeechRecog][getRecognition][Score:0.6716927289962769]こと
+[Info][SpeechRecog][getRecognition][Score:0.673940896987915]後藤
+[Info][SpeechRecog][getRecognition][Score:0.6796242594718933]事
+[Info][SpeechRecog]getName
+[Info][MotionAsSotaWish][Say][scene:talk]ゴトウさんだね！
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1508133490835.wav
+[Info][CPlayWave]Play /var/sota/tts//1508133490835.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 850
+[Info][MotionAsSotaWish]play 1341
+[Info][MotionAsSotaWish][play][talk] [941sec]
+[Info][MotionAsSotaWish][Say][scene:talk]ゴトウさんの体温は何度？
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1508133505239.wav
+[Info][CPlayWave]Play /var/sota/tts//1508133505239.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 877
+[Info][MotionAsSotaWish]play 2542
+[Info][MotionAsSotaWish][play][talk] [2142sec]
+[Info][CPlayWave]removeShutdownHook
+[Info][CPlayWave]removeShutdownHook
+[Info][SpeechRecog][getRecognition][Score:0.8168241182963053]三十なら
+[Info][SpeechRecog][getRecognition][Score:0.8163755734761555]三十男
+[Info][SpeechRecog][getRecognition][Score:0.8240545590718586]三十奈良
+[Info][SpeechRecog][getRecognition][Score:0.815728743871053]三十なう
+[Info][SpeechRecog][getRecognition][Score:0.9632291793823242]三十七
+[Info][SpeechRecog][getRecognition][Score:0.8258744875590006]三重七
+[Info][SpeechRecog][getRecognition][Score:0.6866997877756754]三重奈良
+[Info][MotionAsSotaWish][Say][scene:talk]３７度ナンブ？
+[Info][TextToSpeechSota][get:３７度ナンブ？][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts0.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 926
+[Info][MotionAsSotaWish]play 1803
+[Info][MotionAsSotaWish][play][talk] [1403sec]
+[Info][CPlayWave]removeShutdownHook
+[Info][SpeechRecog][getRecognition][Score:0.7077309290568033]③
+[Info][SpeechRecog][getRecognition][Score:0.6935907204945881]ｓｕｎ
+[Info][SpeechRecog][getRecognition][Score:0.6775253613789876]燦
+[Info][SpeechRecog][getRecognition][Score:0.786166508992513]さん
+[Info][SpeechRecog][getRecognition][Score:0.6966230074564616]サン
+[Info][SpeechRecog][getRecognition][Score:0.6751900513966878]酸
+[Info][SpeechRecog][getRecognition][Score:0.739049752553304]三
+[Info][SpeechRecog][getRecognition][Score:0.6751978397369385]ｓｏｎ
+[Info][SpeechRecog][getRecognition][Score:0.6822590827941895]ｓａｎ
+ゴトウさんの体温は，三十七.さん℃ です．
+ゴトウさんの体温は，37.0℃ です．
+[Info][MotionAsSotaWish][Say][scene:talk]ゴトウさんの体温は，37.0℃ です．
+[Info][TextToSpeechSota][get:ゴトウさんの体温は，37.0℃ です．][speechRate:11][pitch:13]][intonation:11]
+[Info][CPlayWave]Play /dev/shm/wavtemptts1.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 1033
+[Info][MotionAsSotaWish]play 3747
+[Info][MotionAsSotaWish][play][talk] [3347sec]
+[Info][MotionAsSotaWish][Say][scene:talk]こんにちは、お名前は
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1507021602943.wav
+[Info][CPlayWave]Play /var/sota/tts//1507021602943.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 1133
+[Info][MotionAsSotaWish]play 2192
+[Info][MotionAsSotaWish][play][talk] [1792sec]
+[Info][CPlayWave]removeShutdownHook
+[Info][CPlayWave]removeShutdownHook
+
+kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`中断します。
+exit
+[1;32mroot@edison:~$[m 
+[1;32mroot@edison:~$[m kill ` jpsmain[1] > |grep "^[0-9]Listening for transport dt_socket at address: 8765
+\+ jar" |awk '{print $1}'`
+
+ロボットとの通信を切断しました。
